@@ -124,6 +124,14 @@ public class Farmer implements Serializable {
         return group;
     }
 
+    public Workers getWorkers() {
+        return workers;
+    }
+
+    public List<Ownership> getOwnerships() {
+        return ownerships;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

@@ -91,6 +91,14 @@ public class Association implements Serializable {  // Classe Associação do Di
         this.location = location;
     }
 
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public List<Farmer> getFarmers() {
+        return farmers;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

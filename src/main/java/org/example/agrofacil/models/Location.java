@@ -96,6 +96,14 @@ public class Location implements Serializable {  // Classe Localização do Diag
         this.longitude = longitude;
     }
 
+    public Association getAssociation() {
+        return association;
+    }
+
+    public Ownership getOwnership() {
+        return ownership;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

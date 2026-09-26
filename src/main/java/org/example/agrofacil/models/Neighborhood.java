@@ -53,6 +53,10 @@ public class Neighborhood implements Serializable {    // Classe Bairro do Diagr
         this.CEP = CEP;
     }
 
+    public City getCity() {
+        return city;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

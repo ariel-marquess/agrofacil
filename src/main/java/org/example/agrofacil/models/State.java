@@ -53,6 +53,10 @@ public class State implements Serializable {  // Classe Estado do Diagrama de Cl
         this.acronym = acronym;
     }
 
+    public List<City> getCities() {
+        return cities;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
