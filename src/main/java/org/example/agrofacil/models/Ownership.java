@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Ownership implements Serializable {  // Classe Propriedade do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -34,7 +34,7 @@ public class Ownership implements Serializable {  // Classe Propriedade do Diagr
         this.location = location;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -66,7 +66,7 @@ public class Ownership implements Serializable {  // Classe Propriedade do Diagr
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Ownership ownership = (Ownership) o;
-        return id == ownership.id && Objects.equals(name, ownership.name) && Objects.equals(area, ownership.area) && Objects.equals(farmer, ownership.farmer) && Objects.equals(location, ownership.location);
+        return Objects.equals(id, ownership.id) && Objects.equals(name, ownership.name) && Objects.equals(area, ownership.area) && Objects.equals(farmer, ownership.farmer) && Objects.equals(location, ownership.location);
     }
 
     @Override

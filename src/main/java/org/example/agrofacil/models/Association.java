@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Association implements Serializable {  // Classe Associação do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -47,7 +47,7 @@ public class Association implements Serializable {  // Classe Associação do Di
         this.location = location;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -103,7 +103,7 @@ public class Association implements Serializable {  // Classe Associação do Di
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Association that = (Association) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(cnpj, that.cnpj) && Objects.equals(email, that.email) && Objects.equals(phone, that.phone) && Objects.equals(location, that.location);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(cnpj, that.cnpj) && Objects.equals(email, that.email) && Objects.equals(phone, that.phone) && Objects.equals(location, that.location);
     }
 
     @Override

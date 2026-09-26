@@ -11,7 +11,7 @@ import java.util.Objects;
 public class City implements Serializable {  // Classe Cidade do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -33,7 +33,7 @@ public class City implements Serializable {  // Classe Cidade do Diagrama de Cla
         this.state = state;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -65,7 +65,7 @@ public class City implements Serializable {  // Classe Cidade do Diagrama de Cla
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         City city = (City) o;
-        return id == city.id && Objects.equals(name, city.name) && Objects.equals(state, city.state);
+        return Objects.equals(id, city.id) && Objects.equals(name, city.name) && Objects.equals(state, city.state);
     }
 
     @Override

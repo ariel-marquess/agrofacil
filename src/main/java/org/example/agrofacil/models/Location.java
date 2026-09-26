@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Location implements Serializable {  // Classe Localização do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String number;
@@ -44,7 +44,7 @@ public class Location implements Serializable {  // Classe Localização do Diag
         this.longitude = longitude;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -108,7 +108,7 @@ public class Location implements Serializable {  // Classe Localização do Diag
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Location location = (Location) o;
-        return id == location.id && Objects.equals(number, location.number) && Objects.equals(address, location.address) && Objects.equals(complement, location.complement) && Objects.equals(city, location.city) && Objects.equals(latitude, location.latitude) && Objects.equals(longitude, location.longitude);
+        return Objects.equals(id, location.id) && Objects.equals(number, location.number) && Objects.equals(address, location.address) && Objects.equals(complement, location.complement) && Objects.equals(city, location.city) && Objects.equals(latitude, location.latitude) && Objects.equals(longitude, location.longitude);
     }
 
     @Override

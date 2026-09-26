@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Neighborhood implements Serializable {    // Classe Bairro do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -29,11 +29,11 @@ public class Neighborhood implements Serializable {    // Classe Bairro do Diagr
         this.CEP = CEP;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -61,7 +61,7 @@ public class Neighborhood implements Serializable {    // Classe Bairro do Diagr
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Neighborhood that = (Neighborhood) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(CEP, that.CEP);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(CEP, that.CEP);
     }
 
     @Override

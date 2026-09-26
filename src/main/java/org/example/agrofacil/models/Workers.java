@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Workers implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -25,7 +25,7 @@ public class Workers implements Serializable {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -45,7 +45,7 @@ public class Workers implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Workers workers = (Workers) o;
-        return id == workers.id && Objects.equals(name, workers.name) && Objects.equals(farmers, workers.farmers);
+        return Objects.equals(id, workers.id) && Objects.equals(name, workers.name) && Objects.equals(farmers, workers.farmers);
     }
 
     @Override

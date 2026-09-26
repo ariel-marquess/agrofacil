@@ -11,7 +11,7 @@ import java.util.Objects;
 public class State implements Serializable {  // Classe Estado do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -29,11 +29,11 @@ public class State implements Serializable {  // Classe Estado do Diagrama de Cl
         this.acronym = acronym;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -61,7 +61,7 @@ public class State implements Serializable {  // Classe Estado do Diagrama de Cl
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         State state = (State) o;
-        return id == state.id && Objects.equals(name, state.name) && Objects.equals(acronym, state.acronym);
+        return Objects.equals(id, state.id) && Objects.equals(name, state.name) && Objects.equals(acronym, state.acronym);
     }
 
     @Override

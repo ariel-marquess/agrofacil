@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Group implements Serializable {  // Classe Grupo do Diagrama de Classes
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -29,7 +29,7 @@ public class Group implements Serializable {  // Classe Grupo do Diagrama de Cla
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -53,7 +53,7 @@ public class Group implements Serializable {  // Classe Grupo do Diagrama de Cla
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Group group = (Group) o;
-        return id == group.id && Objects.equals(name, group.name) && Objects.equals(association, group.association) && Objects.equals(farmers, group.farmers);
+        return Objects.equals(id, group.id) && Objects.equals(name, group.name) && Objects.equals(association, group.association) && Objects.equals(farmers, group.farmers);
     }
 
     @Override

@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Farmer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;
@@ -64,7 +64,7 @@ public class Farmer implements Serializable {
         this.group = group;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -136,7 +136,7 @@ public class Farmer implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Farmer farmer = (Farmer) o;
-        return id == farmer.id && Objects.equals(name, farmer.name) && Objects.equals(cpf, farmer.cpf) && Objects.equals(email, farmer.email) && Objects.equals(phone, farmer.phone) && Objects.equals(dateOfBirth, farmer.dateOfBirth) && Objects.equals(password, farmer.password) && Objects.equals(association, farmer.association) && Objects.equals(group, farmer.group);
+        return Objects.equals(id, farmer.id) && Objects.equals(name, farmer.name) && Objects.equals(cpf, farmer.cpf) && Objects.equals(email, farmer.email) && Objects.equals(phone, farmer.phone) && Objects.equals(dateOfBirth, farmer.dateOfBirth) && Objects.equals(password, farmer.password) && Objects.equals(association, farmer.association) && Objects.equals(group, farmer.group);
     }
 
     @Override
