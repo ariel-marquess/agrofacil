@@ -40,7 +40,7 @@ public class Material implements Serializable {
     public List<Input> getInputs() {
         return inputs;
     }
-
+// a
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
